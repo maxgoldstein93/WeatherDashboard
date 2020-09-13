@@ -52,8 +52,9 @@ $(document).ready(function () {
                 // Day
                 var day = date.getDate();
                 // Display date time in MM-dd-yyyy h:m:s format
-                var todaysDate = "(" + month + '/' + day + '/' + year + ")";
+                todaysDate = "(" + month + '/' + day + '/' + year + ")";
                 console.log(todaysDate);
+                
 
                 }
                 convert();
@@ -86,7 +87,7 @@ $(document).ready(function () {
                 // Day
                 var day = date.getDate();
                 // Display date time in MM-dd-yyyy h:m:s format
-                var read5DayDate = "(" + month + '/' + day + '/' + year + ")";
+                read5DayDate = "(" + month + '/' + day + '/' + year + ")";
                 console.log(read5DayDate);
                 }
                 convertFiveDayDate();
