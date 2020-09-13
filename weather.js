@@ -53,12 +53,12 @@ $(document).ready(function () {
                 var day = date.getDate();
                 // Display date time in MM-dd-yyyy h:m:s format
                 todaysDate = "(" + month + '/' + day + '/' + year + ")";
-                console.log(todaysDate);
+                
                 
 
                 }
                 convert();
-                console.log(todaysDate);
+                
                 var tempF = ((temp - 273.15) * 1.80 + 32).toFixed(2);
 
                 $("#cityChoice").text(city)
@@ -70,7 +70,7 @@ $(document).ready(function () {
                 $("#uvIndex").text("UV Index " + uvIndex)
 
                 // fill cards with 5 day forcast
-                    console.log(response)
+                    
                 for(var i = 1; i < 6; i++){
                     var fiveDayDate = response.daily[i].dt;
                     function convertFiveDayDate(){
@@ -96,12 +96,16 @@ $(document).ready(function () {
                 var fiveDayTemp = response.daily[i].temp.day;
                 var fiveDayTempF = ((fiveDayTemp - 273.15) * 1.80 + 32).toFixed(2);
                 console.log(fiveDayTempF);
-                var fiveDayHumidity = response.daily[1].humidity;
+                var fiveDayHumidity = response.daily[i].humidity;
                 console.log(fiveDayHumidity);
-                $(".5dayDate").text(read5DayDate);
+                $("#5dayDate1").text(read5DayDate);
+                $("#5dayDate2").text(read5DayDate);
+                $("#5dayDate3").text(read5DayDate);
+                $("#5dayDate4").text(read5DayDate);
+                $("#5dayDate5").text(read5DayDate);
                 $(".5dayIcon").text(fiveDayIcon);
                 $(".5dayTemp").text(fiveDayTempF);
-                $(".5dayhumidity")(fiveDayHumidity);
+                $(".5dayhumidity").text(fiveDayHumidity);
 
                         
                     }
