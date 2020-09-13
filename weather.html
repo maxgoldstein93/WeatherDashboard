@@ -7,7 +7,11 @@
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="./Assets/weather.css">
+    <script type="text/javascript"></script>
+    <script src="./weather.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e5d9b88f96.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,23 +24,52 @@
         <aside id="wrapper">
             <div class="sidebar-wrapper container">
                 <div class="row">
-                    <div class="col">
-                        <p>Search city</p>
+                    <div class="col mt-3">
+                        <h4>Search for a City:</h4>
+                        <input id="userCity">
+                        <button id= "searchCity">search</button>
+                    </input>
                     </div>
                 </div>
             </div>
         </aside>
         <section class="container" id="page-content-wrapper">
             <div class="row">
-                <div class="col-lg-12 md-12 sm-12">
-                    <h1 id="date">THE CURRENT DATE</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum praesentium velit dignissimos
-                        doloremque non. Voluptatibus voluptatum unde, mollitia consectetur hic quibusdam tempora
-                        nostrum magni deserunt! Obcaecati numquam necessitatibus modi quod. Lorem ipsum dolor sit
-                        amet consectetur adipisicing elit. Consequatur quod aliquid veritatis, deserunt doloremque
-                        porro aspernatur dolores minima vel architecto, maxime at necessitatibus corrupti laudantium
-                        quas obcaecati quos, modi placeat?</p>
+                <div class="col-3 lg-md-sm ">
+                    <h1 id="cityChoice">Pittsburgh</h1>
                 </div>
+                <div class="col-lg-md sm">
+                    <h1 id="date"> (09/14/2020)</h1>
+                </div>
+                <div class="col-lg md sm">
+                    <h1 id="icon">icon</h1>
+                </div>
+            </div>
+                <div class="row ml-1">
+                    <div class="col-lg-12 md-12 sm-12">
+                        <h4 id="temperature"> Temperature: 75°F </h4>
+                    </div>
+                </div>
+                <br>
+                <div class="row ml-1">
+                    <div class="col-lg-12 md-12 sm-12">
+                        <h4 id="humidity">Humidity: 86%</h4>
+                    </div>
+                </div>
+                <br>
+                <div class="row ml-1">
+                    <div class="col-lg-12 md-12 sm-12">
+                        <h4 id="windSpeed">Wind Speed 3.2 MPH</h4>
+                    </div>
+                </div>
+                <br>
+                <div class="row ml-1">
+                    <div class="col-lg-12 md-12 sm-12">
+                        <h4 id="uvIndex">UV Index: 6</h4>
+                        
+                    </div>
+                </div>
+                <br>
             </div>
         </section>
         <section id="day-content-wrapper" class="container">
@@ -101,9 +134,8 @@
     </main>
 
 
-
-
-
+    
+    <script type="text/javascript"></script>
     <script src="./weather.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
