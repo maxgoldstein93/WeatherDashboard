@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header id="header"class="card text-white bg-dark ">
+    <header id="header" class="card text-white bg-dark ">
         <div class="card-header text-center ">
             <h1>Weather Dashboard</h1>
         </div>
@@ -25,11 +25,19 @@
             <div class="sidebar-wrapper container">
                 <div class="row">
                     <div class="col mt-3">
-                        <h4>Search for a City:</h4>
-                        <input id="userCity">
-                        <button id= "searchCity">search</button>
-                    </input>
+                        <form>
+                            <h4>Search for a City:</h4>
+                                <input id="userCity">
+                                <button id="searchCity" type="submit">search</button>
+                            </input>
+                        </form>
                     </div>
+                </div>
+                <br>
+                <div class="card">
+                    <ul id = "cityList" class="list-group ">
+                        
+                    </ul>
                 </div>
             </div>
         </aside>
@@ -45,95 +53,40 @@
                     <h1 id="icon">icon</h1>
                 </div>
             </div>
-                <div class="row ml-1">
-                    <div class="col-lg-12 md-12 sm-12">
-                        <h4 id="temperature"> Temperature: 75°F </h4>
-                    </div>
+            <div class="row ml-1">
+                <div class="col-lg-12 md-12 sm-12">
+                    <h4 id="temperature"> Temperature: 75°F </h4>
                 </div>
-                <br>
-                <div class="row ml-1">
-                    <div class="col-lg-12 md-12 sm-12">
-                        <h4 id="humidity">Humidity: 86%</h4>
-                    </div>
+            </div>
+            <br>
+            <div class="row ml-1">
+                <div class="col-lg-12 md-12 sm-12">
+                    <h4 id="humidity">Humidity: 86%</h4>
                 </div>
-                <br>
-                <div class="row ml-1">
-                    <div class="col-lg-12 md-12 sm-12">
-                        <h4 id="windSpeed">Wind Speed 3.2 MPH</h4>
-                    </div>
+            </div>
+            <br>
+            <div class="row ml-1">
+                <div class="col-lg-12 md-12 sm-12">
+                    <h4 id="windSpeed">Wind Speed 3.2 MPH</h4>
                 </div>
-                <br>
-                <div class="row ml-1">
-                    <div class="col-lg-12 md-12 sm-12">
-                        <h4 id="uvIndex">UV Index: 6</h4>
-                    </div>
+            </div>
+            <br>
+            <div class="row ml-1">
+                <div class="col-lg-12 md-12 sm-12">
+                    <h4 id="uvIndex">UV Index: 6</h4>
                 </div>
-                <br>
+            </div>
+            <br>
             </div>
         </section>
         <section id="day-content-wrapper" class="container">
-            <div class="row">
-                <div class="col-lg">
-                    <h2>5 Day: Forcast</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg md sm">
-                    <div class="card text-white bg-dark mb-3 mt-3">
-                        <div class="card-body">
-                            <h5 id ="5dayDate1" class ="card-title">DATE</h5>
-                            <p class="5dayIcon card-text">icon</p>
-                            <p class="5dayTemp card-text">Temp</p>
-                            <p class="5dayhumidity card-text">Humidity</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg">
-                    <div class="card text-white bg-dark mb-3 mt-3">
-                        <div class="card-body">
-                            <h5 id ="5dayDate2"class ="card-title">DATE</h5>
-                            <p class="5dayIcon card-text">icon</p>
-                            <p class="5dayTemp card-text">Temp</p>
-                            <p class="5dayhumidity card-text">Humidity</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg">
-                    <div class="card text-white bg-dark mb-3 mt-3">
-                        <div class="card-body">
-                            <h5 id ="5dayDate3"class ="card-title">DATE</h5>
-                            <p class="5dayIcon card-text">icon</p>
-                            <p class="5dayTemp card-text">Temp</p>
-                            <p class="5dayhumidity card-text">Humidity</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg">
-                    <div class="card text-white bg-dark mb-3 mt-3">
-                        <div class="card-body">
-                            <h5  id ="5dayDate4"class ="card-title">DATE</h5>
-                            <p class="5dayIcon card-text">icon</p>
-                            <p class="5dayTemp card-text">Temp</p>
-                            <p class="5dayhumidity card-text">Humidity</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg">
-                    <div class="card text-white bg-dark mb-3 mt-3">
-                        <div class="card-body">
-                            <h5 id ="5dayDate5"class ="card-title">DATE</h5>
-                            <p class="5dayIcon card-text">icon</p>
-                            <p class="5dayTemp card-text">Temp</p>
-                            <p class="5dayhumidity card-text">Humidity</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="forecast" class="row "></div>
             </div>
         </section>
     </main>
 
 
-    
+
     <script type="text/javascript"></script>
     <script src="./weather.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
