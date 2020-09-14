@@ -14,8 +14,6 @@ $(document).ready(function () {
         $("#cityList").append(cityLi);
         // set local storage?
         // add functionality to city name
-        
-
     }
         renderPastCity();
 
@@ -51,6 +49,12 @@ $(document).ready(function () {
                 console.log(icon)
                 var temp = response.current.temp
                 console.log(temp)
+                    // IMG in main
+                var iconLink = "http://openweathermap.org/img/wn/" + icon + ".png"
+                var newImg = $("#icon")
+                newImg.attr("src", iconLink)
+                newImg.append(iconLink)
+                
 
                 // Covert temp to farenhite
                 function convert() {
@@ -76,10 +80,9 @@ $(document).ready(function () {
                 convert();
 
                 var tempF = ((temp - 273.15) * 1.80 + 32).toFixed(2);
-
+                    // display on screen
                 $("#cityChoice").text(city)
                 $("#date").text(todaysDate)
-                $("#icon").text(icon)
                 $("#temperature").text("Current Temperature: " + tempF + "°F")
                 $("#humidity").text("Humidity: " + humidity + "%")
                 $("#windSpeed").text("Wind Speed: " + windSpeed + "MPH")
@@ -116,11 +119,15 @@ $(document).ready(function () {
                     var fiveDayHumidity = response.daily[i].humidity;
                     console.log(fiveDayHumidity);
 
-                    var card = $("<div>").addClass("card card text-white bg-primary m-3");
+                    
+
+                    var card = $("<div>").addClass("card-img col-2 card card text-white bg-dark m-3");
                     // fill it with data[i]
                     var data = $("<h5>").text(read5DayDate);
                     card.append(data)
-                    var data = $("<p>").text(fiveDayIcon);
+                    var data = $("<img>");
+                    var fiveiconLink = "http://openweathermap.org/img/wn/" + fiveDayIcon + ".png"
+                    data.attr("src", fiveiconLink)
                     card.append(data)
                     var data = $("<p>").text("Temp: " + fiveDayTempF + "°F");
                     card.append(data)
