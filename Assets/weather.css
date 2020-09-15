@@ -29,3 +29,17 @@
     left:300px;
     margin: 15px;
 }
+.green {
+    background-color:rgba(6, 163, 77, 0.87);
+    
+  }
+  
+  .yellow{
+    background-color: yellow;
+    
+  }
+  
+  .red {
+    background-color: red;
+    
+  }
