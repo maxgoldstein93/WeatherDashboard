@@ -1,33 +1,46 @@
 // Connect to weather API
 $(document).ready(function () {
+    var cityArr = [ ];
+    function renderPastCity() {
+        cityArr = JSON.parse(localStorage.getItem("cities")) || [];
+        $("#cityList").empty();
+        for(var i = 0; i < cityArr.length; i++){
+            var cityLi = $("<li>").addClass("list-group-item p-3")
+            cityLi.text(cityArr[i])
+            $("#cityList").prepend(cityLi);
+
+        }
+       
+
+        // add functionality to city name
+    }
+    $("#cityList").on("click","li", function(){
+        console.log($(this));
+        var city = $(this).text();
+        getWeather(city);
+
+    })
+
+    renderPastCity();
     $("#searchCity").on("click", function (event) {
         event.preventDefault();
 
+        cityArr = JSON.parse(localStorage.getItem("cities")) || [];
+
 
         var city = $("#userCity").val();
-        // localStorage.setItem($("#userCity", city));
-        localStorage.setItem($(this).find("input").attr("id"), (city));
-        console.log(city)
-        
-
-        var apiKey = "6ce841efb6b07e3f98309460d1f79c3c";
-
-
-        function renderPastCity() {
-            for (var i = 0; i < city.length; i++)
-                var cityLi = $("<li>").addClass("list-group-item p-3")
-            cityLi.text(city)
-            $("#cityList").prepend(cityLi);
-
-            // add functionality to city name
-        }
-        var displayCity = localStorage.getItem("userCity");
-        var displayUserCity = document.getElementById("userCity");
-        displayUserCity.value = displayCity;
-        console.log(displayUserCity)
-        console.log(displayCity)
+        cityArr.push(city)
+        localStorage.setItem("cities",JSON.stringify(cityArr));
+        console.log(cityArr)
         renderPastCity();
+        getWeather(city);
 
+    });
+    function getWeather(city){
+
+    
+        
+        var apiKey = "6ce841efb6b07e3f98309460d1f79c3c";
 
         // Get longitude and latitude
         $.ajax({
@@ -99,7 +112,7 @@ $(document).ready(function () {
                 $("#colorIndex").text(uvIndex)
 
                 // fill cards with 5 day forcast
-
+                $("#forecast").empty();
                 for (var i = 1; i < 6; i++) {
 
                     var fiveDayDate = response.daily[i].dt;
@@ -142,7 +155,9 @@ $(document).ready(function () {
                     card.append(data)
 
                     // append that card to #5day
+                    
                     $("#forecast").append(card)
+
                 }
 
                 // function to change UV Index backround color
@@ -167,9 +182,9 @@ $(document).ready(function () {
 
                 colorChange();
 
-                
+
             });
         });
-    });
+    };
 });
 
