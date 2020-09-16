@@ -15,3 +15,6 @@ Other challenges I faced were scope and creating functions inside of functions. 
 
 To convert times to a readable date.
 
+![Weather Dashboard](https://user-images.githubusercontent.com/69087369/93281182-9203c900-f799-11ea-8db2-1e5dde7a0c44.gif)
+
+
