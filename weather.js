@@ -57,7 +57,7 @@ $(document).ready(function () {
                 var temp = response.current.temp
 
                 // IMG in main
-                var iconLink = "http://openweathermap.org/img/wn/" + icon + ".png"
+                var iconLink = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
                 var newImg = $("#icon")
                 newImg.attr("src", iconLink)
                 newImg.append(iconLink)
@@ -112,7 +112,7 @@ $(document).ready(function () {
                         // Day
                         var day = date.getDate();
                         // Display date time in MM-dd-yyyy h:m:s format
-                        var read5DayDate = "(" + month + '/' + day + '/' + year + ")";
+                        var read5DayDate =  month + '/' + day + '/' + year ;
                         console.log(read5DayDate);
                         return read5DayDate;
                     }
@@ -129,7 +129,7 @@ $(document).ready(function () {
                     var data = $("<h5>").text(read5DayDate);
                     card.append(data)
                     var data = $("<img>");
-                    var fiveiconLink = "http://openweathermap.org/img/wn/" + fiveDayIcon + ".png"
+                    var fiveiconLink = "http://openweathermap.org/img/wn/" + fiveDayIcon + "@2x.png"
                     data.attr("src", fiveiconLink)
                     card.append(data)
                     var data = $("<p>").text("Temp: " + fiveDayTempF + "°F");
